@@ -1,0 +1,45 @@
+button.close-btn {
+	.pad-all(0);
+	.no-border;
+	.no-rounded;
+	.bg-col(@trans);
+	.w(6);
+	.h(6);
+	
+	.line {
+	.h(0.1);
+	width: 110%;
+	.border-top(@blk; 0.1);	
+	.transition(0.5s);
+	margin: auto;
+	}
+	
+	.line-1 {
+	.rotation(45deg);
+	}
+	
+	.line-2 {
+	.rotation(-45deg);
+	}
+	
+	&:hover, &:active, &:focus {
+		.line {
+		width: 95%;	
+		}
+		.line-1 {
+		.rotation(0deg);
+		}
+		
+		.line-2 {
+		.opacity(0);
+		.rotation(0deg);
+		}
+	}
+	
+}
+
+button.sub-view-back-btn {
+	.no-border;
+	.pad-all(0);
+	.bg-col(@trans);
+}
