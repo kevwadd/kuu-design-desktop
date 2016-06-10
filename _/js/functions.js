@@ -77,6 +77,78 @@
 			return false;
 		
 		});
+		
+		$('body').on('click','a.img-link', function(e){
+			
+			var w = parseInt($(this).attr('data-img-width'));
+			var h = parseInt($(this).attr('data-img-height'));
+			var img_src = $(this).attr('href');
+			var img_meta = $(this).parent().find('.img-meta').html().trim();
+			var btn = '<button class="close-meta"><span class="sr-only">Close information</span><i class="fa fa-times"></i></button>';
+			
+			$('.img-viewer').find('.img-holder').empty();
+			$('.img-viewer').find('.img-meta').removeClass('open').addClass('closed').empty();
+			$('.img-viewer').find('button.info-view-btn').removeClass('down').addClass('up hidden');
+			
+			//console.log(img_meta);
+			
+			if (w > h) {
+				
+				if ($('.img-viewer-tall').hasClass('open')) {
+				$('.img-viewer-tall').removeClass('open').addClass('closed');
+				}	
+				if (img_meta != "") {
+				$('.img-viewer-wide').find('.img-meta').removeClass('hidden').append('<div class="img-meta-inner">'+img_meta+btn+'</div>');
+				$('.img-viewer-wide').find('.info-view-btn').removeClass('hidden');
+				} else {
+				$('.img-viewer-wide').find('.img-meta').addClass('hidden');	
+				}
+				$('.img-viewer-wide').find('.img-holder').prepend('<img src="'+img_src+'" />');
+				$('.img-viewer-wide').removeClass('closed').addClass('open');	
+			}
+			
+			if (h > w) {
+				if ($('.img-viewer-wide').hasClass('open')) {
+				$('.img-viewer-wide').removeClass('open').addClass('closed');	
+				}
+				if (img_meta != "") {
+				$('.img-viewer-tall').find('.img-meta').removeClass('hidden').append('<div class="img-meta-inner">'+img_meta+btn+'</div>');
+				$('.img-viewer-tall').find('.info-view-btn').removeClass('hidden');
+				} else {
+				$('.img-viewer-tall').find('.img-meta').addClass('hidden');		
+				}
+				$('.img-viewer-tall').find('.img-holder').prepend('<img src="'+img_src+'" />');
+				$('.img-viewer-tall').removeClass('closed').addClass('open');	
+			}
+				
+			return false;
+		
+		});
+		
+		$('body').on('click','button.close-meta', function(e){
+
+			$(this).parents('.img-meta').removeClass('open').addClass('closed');
+			$(this).parents('.img-viewer').find('button.info-view-btn').removeClass('down').addClass('up');	
+			return false;
+		
+		});
+		
+		$('body').on('click','button.info-view-btn', function(e){
+
+			$(this).removeClass('up').addClass('down');
+			$(this).parent().find('.img-meta').removeClass('closed').addClass('open');	
+			return false;
+		
+		});
+		
+		$('body').on('click','.img-viewer', function(e){
+
+			$(this).removeClass('open').addClass('closed');	
+				
+			return false;
+		
+		});
+
 
 	});
 	
