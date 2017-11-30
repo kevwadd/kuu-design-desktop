@@ -1,19 +1,25 @@
 article.page {
+//padding: 30px 0px 60px 0px;
+.pad-top(3);
 }
 
 aside.info-sb {
 position: fixed;
 left: 30px;
-top: 230px;
-//height: 100%;
-margin-bottom: 30px;
+top: 170px;
+bottom: 60px;
 .w(27);
-.border( @blk; 0.1);
-.pad-all(2);	
+.border-left( @blk; 0.1);
+.border-right( @blk; 0.1);
+.pad(3;2;2;2);	
 overflow: auto;
 .bg-col(@wht);
 .col(@blk);
 transition: top 0.3s;
+	img {
+	.border( @blk; 0.1);
+	.mag-bot(1.5);	
+	}
 	h1 {
 	.mag-top(0);
 	.font-size(3);
@@ -32,7 +38,7 @@ transition: top 0.3s;
 
 .porfolio-imgs {
 .mag-left(30);
-.pad(3;3;3;7);
+.pad-left(7);
 min-width: 750px;	
 	img {
 	display: block;
@@ -40,18 +46,35 @@ min-width: 750px;
 	max-width: 800px;	
 	.border(@blk; 0.1);
 	}
+	
+	.imgs-section {
+	position: relative;
+	.mag-bot(3);
+		h2 {
+		position: absolute;
+		left: 10px;
+		top: 0px;
+		.mag-all(0);
+		font-family: @lite-font;
+		font-weight: 200;
+		.font-size(2);
+		.line-h(2);	
+		transform: rotate(90deg);
+		transform-origin: top left;
+		}	
+	}
 }
 
 body.page-template-portfolio-page, body.page-template-single-portfolio-page {
 	#main-content {
 		&.nav-closed {
-		.mag-top(12);
+		.pad-top(9);
 		}
 		
 		&.nav-open {
-		.mag-top(40);
+		.pad-top(25);
 			aside.info-sb {
-			top: 510px;
+			top: 330px;
 			}
 		}
 	}
