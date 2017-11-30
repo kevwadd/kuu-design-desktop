@@ -1,40 +1,114 @@
-#banner {
+.masthead {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
 	.bg-col-blk;
-	.h(10);
-	.pad-top(2);
-	.pad-bot(2);
+	.pad(0;3;0;3);
+	.h(8);
 	
 	a#logo {
+	.caps;
 	display: block;
-	.h(6);
-	.w(13);
-	.no-text-dec;
-	.indent(-999);
-	background-image: url('img/kuu-design-logo.png');
-	background-repeat: no-repeat;
-	background-position: left center;
-	.bg-size(contain);
-		&:hover, &:active, &:focus {
-		.opacity;
-		}
+	.w(25);
+	font-family: @lite-font;
+	.font-size(4);
+	.line-h(8);
+	.col(@wht);
+	.no-text-dec;	
+	font-weight: 200;
+	letter-spacing: -2px;
+		span {
+			color: @gray-dk;
+			transition: color 0.3s;
+			}
+			&.web-active {
+				span {
+				color: darken(GreenYellow, 20%);	
+				}
+				&:after {
+				content: "Web";
+				color: GreenYellow;	
+				}	
+			}
+			&.illustration-active {
+				span {
+				color: darken(MediumOrchid, 20%);	
+				}
+				&:after {
+				content: "Illustrations";
+				color: MediumOrchid;	
+				}	
+			}
+			&.graphics-active {
+				span {
+				color: darken(DarkTurquoise, 20%);	
+				}
+				&:after {
+				content: "Graphics";
+				color: DarkTurquoise;
+				}	
+			}
+			&.magazines-active {
+				span {
+				color: darken(DarkOrange, 20%);	
+				}
+				&:after {
+				content: "Magazines";
+				color: DarkOrange;	
+				}	
+			}
+			&.videos-active {
+				span {
+				color: darken(Gold, 20%);	
+				}
+				&:after {
+				content: "Animations";
+				color: Gold;	
+				}	
+			}
 	}
 	
-	#menu-btn {
-	width: 100%;
+	button#strip-nav-btn {
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	.w(4);
+	.h(4);
 	.pad-all(0);
-	.h(6);
 	.no-rounded;
-	.no-border ;
+	.no-border;
 	.bg-col(@trans);
 		.btn-bar {
-		.border-bot(white, 0.1);
-		.mag-bot(1);	
-		.pad-top(1);
+		display: block;
+		width: 100%;
+		.h(0.1);
+		.bg-col(@wht);
+		margin: 10px 0px;
+		transform: rotate(0deg);
+		transform-origin: center;
+		transition: transform 0.3s;
 		}
+		
 		&:hover, &:active, &:focus {
 			.btn-bar {
-			border-color: gray;	
+			.bg-col(@grey);
 			}
+		}
+		
+		&.nav-open {
+			.btn-bar {
+			transform: rotate(45deg);
+			transform-origin: center;
+			margin: 0px;
+				&:first-child {
+				display: none;	
+				}
+				&:last-child {
+				transform: rotate(-45deg);
+				}
+			}		
 		}
 	}
 }

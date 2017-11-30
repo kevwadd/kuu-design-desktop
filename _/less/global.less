@@ -1,107 +1,55 @@
 html, body {
+width: 100%;
 height: 100%;
+min-height: 100%;
 }
 
 body {
-width: 100%;
-height: 100%;
-min-height: 100%;	
 position: relative;
 -webkit-tap-highlight-color: transparent;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 .font-size(1.6);
 .col(@blk);
-	&.sub-visible, &.nav-visible {
-	overflow: hidden;
-	}
-	
-	&.admin-bar #main-view {
-	.pad-bot(3.2);	
-	}
+overflow: hidden;
 }
 
-#outer-wrap {
-width: 100%;
-height: 100%;
-min-height: 100%;
-overflow: visible;
-position: relative;
-	&.main-visible {
-	//overflow-x: hidden;	
-	.transform(translateX(0%));
-	.transform(translateY(0%));	
-	}
-	
-	&.sub-visible {
-	.transform(translateX(-100%));
-	}
-	
-	&.nav-visible {
-	.transform(translateY(100%));
-	}
+pre.debug {
+position: fixed;
+z-index: 10000;
+top: 30px;
+left: 30px;
+width: 800px;
+height: 500px;
+overflow: scroll;
+.bg-col(@blk);
+.col(@wht);	
+text-align: left;
+}
+.app {
+position: absolute;
+left: 0px;
+top: 0px;
+right: 0px;
+bottom: 0px;
+overflow: hidden;
+.min-w(120);
 }
 
 #main-content {
-.min-h(60);	
+position: absolute;
+left: 0px;
+top: 80px;
+right: 0px;
+bottom: 60px;	
+min-height: 500px;
+overflow-y: auto;
+transition: margin-top 0.3s;	
+	&.nav-open {
+	overflow-y: hidden;	
+	} 
 }
 
 .container {
 .min-w(117);	
-}
-
-.inner-wrap {
-width: 100%;
-	&#sub-view {
-	position: fixed;
-	.transform(translateX(100%));
-	height: 100%;
-	top: 0px;	
-	overflow: hidden;
-		h2 {
-		.font-size(9);
-		.caps;
-		.line-h(7);	
-		font-family: 'Work Sans', sans-serif;
-		.mag-bot(3);
-		}
-		
-		p {
-		.font-size(2);
-		.line-h(3);
-		.mag-bot(3);
-			&:last-child {
-			.mag-bot(0);	
-			}
-		}
-		
-	}
-	
-	&.green-grad {
-	.horizontal-gradient( @green, darken(@green, 20%));	
-		.inner-wrapper {
-		.bg-col(@green-dk);	
-		}	
-	}
-	
-	&.blue-grad {
-	.horizontal-gradient(@blue, darken(@blue, 20%));	
-		.inner-wrapper {
-		.bg-col(@blue-dk);	
-		}	
-	}
-	
-	&.orange-grad {
-	.horizontal-gradient(@orange, darken(@orange, 20%));
-		.inner-wrapper {
-		.bg-col(@orange-dk);	
-		}		
-	}
-	
-	&.purple-grad {
-	.horizontal-gradient(@purple, darken(@purple, 20%));
-		.inner-wrapper {
-		.bg-col(@purple-dk);	
-		}		
-	}
 }

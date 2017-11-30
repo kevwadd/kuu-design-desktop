@@ -1,5 +1,50 @@
-#footer-info {
-	.pad-top(2);
-	.pad-bot(2);
-	.border-top(@blk; 0.1);
+.site-info {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	.bg-col(@blk);
+	.pad(0;3;0;3);
+	.col(@wht);
+	height: 60px;
+	overflow: hidden;
+		.copyright {
+		font-size: 14px;
+		line-height: 60px;
+		text-transform: uppercase;	
+		width: 50%;
+		float: left;
+		}
+		
+		.footer-menus {
+		width: 50%;
+		float: right;	
+		text-align: right;	
+		line-height: 60px;	
+		}
+		
+		.footer-links {
+		margin-bottom: 0px;
+		display: inline-block;
+		.caps;
+			a {
+			.col(@wht);	
+			font-size: 14px;
+			line-height: 60px;
+			}
+		}
+		
+		.social-links {
+		margin-bottom: 0px;
+		margin-right: -5px;
+		display: inline-block;
+			a {
+			.col(@wht);	
+			font-size: 14px;
+			line-height: 60px;
+				i {
+				line-height: 60px;	
+				}
+			}
+		}
 }
