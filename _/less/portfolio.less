@@ -36,13 +36,12 @@ transition: top 0.3s;
 	}
 }
 
-.porfolio-imgs {
+.portfolio-imgs {
 .mag-left(30);
 .pad-left(7);
 min-width: 750px;	
 	img {
-	display: block;
-	margin: auto;
+	display: inline-block;
 	max-width: 800px;	
 	.border(@blk; 0.1);
 	}
@@ -50,6 +49,7 @@ min-width: 750px;
 	.imgs-section {
 	position: relative;
 	.mag-bot(3);
+	text-align: center;
 		h2 {
 		position: absolute;
 		left: 10px;
@@ -61,6 +61,22 @@ min-width: 750px;
 		.line-h(2);	
 		transform: rotate(90deg);
 		transform-origin: top left;
+		}
+		
+		&.two_images {
+			img {
+			width: 40%;
+			height: auto;
+			margin: 0px 2.5%;	
+			}
+		}	
+		
+		&.three_images {
+			img {
+			width: 25%;
+			height: auto;
+			margin: 0px 2.5%;	
+			}
 		}	
 	}
 }
