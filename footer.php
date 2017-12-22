@@ -1,4 +1,4 @@
-		</main>
+		</div>
 		
 		<footer class="site-info">
 			<div class="copyright">&copy; Kuu creative <?php echo date('Y'); ?></div>

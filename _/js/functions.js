@@ -4,29 +4,29 @@
 	$(document).ready(function (){
 		
 		$('body').on('click', 'button.view-grid', function(){
-			var portfolio = $(this).text();
+			var portfolio = $(this).data();
 			
 			$(this).parent().siblings().removeClass('nav-item-open');
-			$('.masthead > a').attr('class', '');
+			$('.logo-tag').attr('class', 'logo-tag').text('');
 			
 			if ($(this).parent().hasClass('nav-item-open')) {
 			$(this).parent().removeClass('nav-item-open').parents('.hp-nav').removeClass('nav-open');	
 			} else {
 			$(this).parent().addClass('nav-item-open').parents('.hp-nav').addClass('nav-open');	
-				if (portfolio == 'Web Design') {
-				$('.masthead > a').addClass('web-active');	
+				if (portfolio.title == 'web-design') {
+				$('.logo-tag').addClass('txt-green').text('Web Design');	
 				}
-				if (portfolio == 'Illustration') {
-				$('.masthead > a').addClass('illustration-active');	
+				if (portfolio.title == 'illustration') {
+				$('.logo-tag').addClass('txt-blue').text('Illustration');	
 				}
-				if (portfolio == 'Graphic Design') {
-				$('.masthead > a').addClass('graphics-active');	
+				if (portfolio.title == 'graphic-design') {
+				$('.logo-tag').addClass('txt-purple').text('Graphic Design');	
 				}
-				if (portfolio == 'Magazine Design') {
-				$('.masthead > a').addClass('magazines-active');	
+				if (portfolio.title == 'magazine-design') {
+				$('.logo-tag').addClass('txt-orange').text('Magazine Design');	
 				}
-				if (portfolio == 'Animation & Video') {
-				$('.masthead > a').addClass('videos-active');	
+				if (portfolio.title == 'motion-design') {
+				$('.logo-tag').addClass('txt-yellow').text('Motion Design');	
 				}
 			}
 			
@@ -41,7 +41,27 @@
 		$('main').toggleClass('nav-closed nav-open');
 		
 		return false;
-		});			     	     
+		});	
+		
+		$('body').on('click', 'button.view-img', function(){
+			
+			$(this).parent().siblings().removeClass('img-active');
+			$(this).parent().toggleClass('img-active');
+			
+			return false;
+		});	
+		
+		$('body').on('click', '.info-nav > .nav > a', function(){
+			
+			var section = $(this).attr('href');
+			
+			$('.sub-page').removeClass('active-section');
+			$(section).addClass('active-section');
+			$(this).siblings().removeClass('active');
+			$(this).addClass('active');
+			
+			return false;
+		});					     	     
 
 	});
 	

@@ -27,27 +27,31 @@ overflow: scroll;
 text-align: left;
 }
 .app {
-position: absolute;
-left: 0px;
-top: 0px;
-right: 0px;
-bottom: 0px;
-overflow: hidden;
+height: 100%;
+display: grid;
+grid-template-rows: 80px auto 60px;
+grid-template-areas: "masthead" "site-content" "site-footer";
 .min-w(120);
+.min-h(80);
+background-color: @wht;
+}
+
+.masthead { 
+grid-area: masthead;
 }
 
 #main-content {
-position: absolute;
-left: 0px;
-top: 80px;
-right: 0px;
-bottom: 60px;	
-min-height: 500px;
-overflow-y: auto;
-transition: padding-top 0.3s;	
-	&.nav-open {
-	overflow-y: hidden;	
-	} 
+grid-area: site-content;
+display: flex;
+flex-direction: column;
+min-height:660px;
+align-items: stretch;
+//height: 100%;
+overflow: hidden;
+}
+
+.site-info {
+grid-area: site-footer;
 }
 
 .container {

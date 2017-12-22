@@ -1,16 +1,13 @@
 .masthead {
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px;
 	.bg-col-blk;
-	.pad(0;3;0;3);
-	.h(8);
+	.pad-left(3);
+	display: flex;
+	grid-template-columns: 230px auto 80px;
 	
 	a#logo {
+	flex: 0 0 230px;
 	.caps;
 	display: block;
-	.w(25);
 	font-family: @lite-font;
 	.font-size(4);
 	.line-h(8);
@@ -18,71 +15,43 @@
 	.no-text-dec;	
 	font-weight: 200;
 	letter-spacing: -2px;
+	position: relative;
 		span {
-			color: @gray-dk;
-			transition: color 0.3s;
+		color: @gray-dk;
+		transition: color 0.3s;
+		}
+		&:hover, &:active, &:focus {
+			span {
+			.col(@wht);	
 			}
-			&.web-active {
-				span {
-				color: darken(GreenYellow, 20%);	
-				}
-				&:after {
-				content: "Web";
-				color: GreenYellow;	
-				}	
-			}
-			&.illustration-active {
-				span {
-				color: darken(MediumOrchid, 20%);	
-				}
-				&:after {
-				content: "Illustrations";
-				color: MediumOrchid;	
-				}	
-			}
-			&.graphics-active {
-				span {
-				color: darken(DarkTurquoise, 20%);	
-				}
-				&:after {
-				content: "Graphics";
-				color: DarkTurquoise;
-				}	
-			}
-			&.magazines-active {
-				span {
-				color: darken(DarkOrange, 20%);	
-				}
-				&:after {
-				content: "Magazines";
-				color: DarkOrange;	
-				}	
-			}
-			&.videos-active {
-				span {
-				color: darken(Gold, 20%);	
-				}
-				&:after {
-				content: "Animations";
-				color: Gold;	
-				}	
-			}
+		}
+	}
+	
+	.logo-tag {
+	flex: 1;
+	font-family: @lite-font;
+	.caps;
+	.font-size(4);
+	.line-h(8);
+	font-weight: 200;
+	letter-spacing: -2px;
+	position: relative;
+	.animated;
+	.fadeIn;
 	}
 	
 	button#strip-nav-btn {
-	position: absolute;
-	right: 30px;
-	top: 50%;
-	transform: translateY(-50%);
-	.w(4);
-	.h(4);
+	flex: 0 0 80px;
+	.w(8);
+	.h(8);
 	.pad-all(0);
 	.no-rounded;
 	.no-border;
 	.bg-col(@trans);
+	
 		.btn-bar {
 		display: block;
-		width: 100%;
+		width: 50%;
 		.h(0.1);
 		.bg-col(@wht);
 		margin: 10px 0px;

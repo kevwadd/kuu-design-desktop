@@ -1,24 +1,18 @@
 .site-info {
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	right: 0px;
 	.bg-col(@blk);
-	.pad(0;3;0;3);
 	.col(@wht);
-	height: 60px;
-	overflow: hidden;
+	.pad(0;3;0;3);
+	display: flex;
+	flex-direction: row;
 		.copyright {
 		font-size: 14px;
 		line-height: 60px;
 		text-transform: uppercase;	
-		width: 50%;
-		float: left;
+		flex: 1;
 		}
 		
 		.footer-menus {
-		width: 50%;
-		float: right;	
+		flex: 1;	
 		text-align: right;	
 		line-height: 60px;	
 		}

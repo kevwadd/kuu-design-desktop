@@ -120,6 +120,23 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/_\/less\/content.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/_\/less\/content.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
 	"\/_\/less\/elements.less": {
 		"aP": 0,
 		"bl": 0,
@@ -387,6 +404,20 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
+	"\/page-templates\/contact-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/contact-page.php",
+		"oF": 0
+		},
+	"\/page-templates\/info-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/info-page.php",
+		"oF": 0
+		},
 	"\/page-templates\/portfolio-page.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -429,32 +460,11 @@
 		"oAP": "\/parts\/global\/main-navigation.php",
 		"oF": 0
 		},
-	"\/parts\/homepage\/contact-info.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/parts\/homepage\/contact-info.php",
-		"oF": 0
-		},
 	"\/parts\/homepage\/hp-portfolio.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/parts\/homepage\/hp-portfolio.php",
-		"oF": 0
-		},
-	"\/parts\/homepage\/subview-links.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/parts\/homepage\/subview-links.php",
-		"oF": 0
-		},
-	"\/parts\/homepage\/subview-views.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/parts\/homepage\/subview-views.php",
 		"oF": 0
 		},
 	"\/README.txt": {
@@ -492,7 +502,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 513031318,
-	"displayValue": "kuu-design-desktop",
+	"displayValue": "kuu-design",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-grumpy"
 	},

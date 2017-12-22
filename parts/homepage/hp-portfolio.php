@@ -14,20 +14,27 @@ $hp_sub_views = get_field('hp_views', 'options');
 	$color = get_field('pg_col', $pg_id);
 	?>
 	<div class="nav-item <?php echo $color; ?>-grad">
-		<button class="view-grid btn-block"><?php echo get_the_title($pg_id); ?><span class="state"><span></span><span></span></span></button>
+		<button class="view-grid btn-block" data-title="<?php echo sanitize_title(get_the_title($pg_id)); ?>"><?php echo get_the_title($pg_id); ?><span class="state"><span></span><span></span></span></button>
 		<div class="nav-grid">
-			<div class="grid-item"><a href="<?php echo get_permalink($item_1); ?>">
-				<span class="img" style="background-image: url(<?php echo $item_1_feat_img; ?>)"></span>
-				<span class="title-wrap"><span><?php echo get_the_title($item_1); ?></span></span>
-			</a></div>
-			<div class="grid-item"><a href="<?php echo get_permalink($item_2); ?>">
-				<span class="img" style="background-image: url(<?php echo $item_2_feat_img; ?>)"></span>
-				<span class="title-wrap"><span><?php echo get_the_title($item_2); ?></span></span>
-			</a></div>
-			<div class="grid-item"><a href="<?php echo get_permalink($item_3); ?>">
-				<span class="img" style="background-image: url(<?php echo $item_3_feat_img; ?>)"></span>
-				<span class="title-wrap"><span><?php echo get_the_title($item_3); ?></span></span>
-			</a></div>
+			<div class="grid-item">
+				<a href="<?php echo get_permalink($item_1); ?>">
+					<span class="img" style="background-image: url(<?php echo $item_1_feat_img; ?>)"></span>
+					<span class="title-wrap"><span><?php echo get_the_title($item_1); ?></span></span>
+				</a>
+			</div>
+			<div class="grid-item">
+				<a href="<?php echo get_permalink($item_2); ?>">
+					<span class="img" style="background-image: url(<?php echo $item_2_feat_img; ?>)"></span>
+					<span class="title-wrap"><span><?php echo get_the_title($item_2); ?></span></span>
+				</a>
+			</div>
+			<div class="grid-item">
+				<a href="<?php echo get_permalink($item_3); ?>">
+					<span class="img" style="background-image: url(<?php echo $item_3_feat_img; ?>)"></span>
+					<span class="title-wrap"><span><?php echo get_the_title($item_3); ?></span></span>
+				</a>
+			</div>
+			<a href="<?php echo get_permalink($pg_id); ?>" class="portfolio-link"><?php echo get_the_title($pg_id); ?> Portfolio</a>
 		</div>
 	</div>
 	<?php } ?>

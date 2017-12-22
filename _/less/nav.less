@@ -1,9 +1,4 @@
 .strip-nav {
-position: fixed;
-left: 0px;
-top: 80px;
-right: 0px;
-z-index: 2;
 //height: 400px;
 	ul {
 	margin-bottom: 0px;	
@@ -70,15 +65,15 @@ z-index: 2;
 }
 
 .hp-nav {
-position: absolute;
-left: 0px;
-top: 0px;
-right: 0px;
-bottom: 0px;	
+display: flex;
+flex-direction: column;	
+height: 100%;
 	.nav-item {
+	overflow: hidden;
+	transition: 0.3s;
+	flex: initial;
 	height: 20%;
 	border-top: 1px solid @blk;
-	transition: height 0.3s;
 		button {
 		border: none;
 		border-radius: 0px;
@@ -94,7 +89,7 @@ bottom: 0px;
 		overflow: hidden;
 		color: @blk;
 		position: relative;
-		transition: height 0.3s;
+		transition: 0.3s;
 			span.state {
 			position: absolute;
 			right: 30px;
@@ -132,20 +127,66 @@ bottom: 0px;
 			}
 		}
 		.nav-grid {
+		position: relative;
+		display: flex;
+		align-items: center;
 		height: 0%;
 		overflow: hidden;
 		background-color: @wht;
-		transition: height 0.3s;
+		transition: 0.3s;
+		padding: 70px 15px;
+			a.portfolio-link {
+			position: absolute;
+			right: 30px;
+			bottom: 0px;
+			padding-right: 60px;
+			line-height:70px;
+			.caps;
+			font-weight: 300;	
+			.font-size(2);
+			.col(@blk);
+			.no-text-dec;
+			transition: 0.3s;
+			-webkit-transform: translate3d(0,0,0);
+				&:before {
+				content: "";
+				position: absolute;
+				.w(5);
+				.h(0.1);
+				.bg-col-blk;
+				right: 0px;
+				top: 50%;	
+				transition: 0.3s;
+				-webkit-transform: translate3d(0,0,0);
+				}
+				&:after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				.mag-top(-0.7);
+				right: 2px;
+				.w(1.5);
+				.h(1.5);
+				.border-top(@blk; 0.1);	
+				.border-right(@blk; 0.1);	
+				transform: rotate(45deg);
+				}
+				&:hover, &:active, &:focus {
+				padding-right: 40px;
+					&:before {
+					.w(3);	
+					}
+				}
+			}
 			.grid-item {
-			width: 100/3%;
 			height: 100%;
-			float: left;
-			padding: 50px 30px;
+			margin: 0px 15px;
+			flex: 1;
 				a {
 					display: block;
 					text-decoration: none;
 					background-color: white;
-					height: 100%;
+					height: 100%;	
 					background-position: center center;
 					background-repeat: no-repeat;
 					background-size: cover;
@@ -156,7 +197,7 @@ bottom: 0px;
 					position: relative;
 					font-weight: 300;
 					text-align: center;
-					transition: background-size 0.3s;
+					transition: 0.3s;
 					
 					span.img {
 					position: absolute;
@@ -174,46 +215,59 @@ bottom: 0px;
 					span.title-wrap {
 					position: absolute;
 					left: 0px;
-					top: 0px;
+					bottom: 0px;
 					width: 100%;
-					height: 100%;
-					transform: translateY(100%);
-					padding: 20px;
-					background: linear-gradient( transparent 0%, rgba(51,51,51,0.9) 70%);
-					transition: transform 0.3s;		
+					height: 50%;
+					padding: 0% 25%;
+					//background: linear-gradient( transparent 0%, rgba(51,51,51,0.9) 70%);
+					.trans-bg(@blk; 0.8);
+					transition: 0.3s;		
 					display: table;
+					border-top: 1px solid @blk;
 					
-						&:after {
-						content: "";
-						position: absolute;
-						left: 50%;
-						top: 25%;
-						margin-left: -20px;
-						width: 40px;
-						height: 1px;
-						.bg-col(@wht);	
-						z-index: 2;
-						}
-						
 						&:before {
 						content: "";
 						position: absolute;
 						left: 50%;
-						top: 25%;
-						margin-left: -20px;
-						width: 40px;
-						height: 1px;
+						top: -30px;
+						.w(6);
+						.h(6);
 						.bg-col(@wht);
-						transform: rotate(90deg);
-						transform-origin: center;	
-						z-index: 2;
+						.rounded(100%);	
+						transform: translateX(-50%);
 						}
 						
 						span {
 						display: table-cell;
 						vertical-align: middle;
-						font-size: 20px;
-						line-height: 20px;	
+						font-size: 30px;
+						line-height: 30px;
+							
+							&:after {
+							content: "";
+							position: absolute;
+							left: 50%;
+							top: 0px;
+							margin-left: -20px;
+							.w(4);
+							.h(0.1);
+							.bg-col-blk;	
+							z-index: 2;
+							}
+						
+							&:before {
+							content: "";
+							position: absolute;
+							left: 50%;
+							top: 0px;
+							margin-left: -20px;
+							.w(4);
+							.h(0.1);
+							.bg-col-blk;
+							transform: rotate(90deg);
+							transform-origin: center;	
+							z-index: 2;
+							}	
 						}
 					}
 					
@@ -227,7 +281,15 @@ bottom: 0px;
 						filter: blur(5px);
 						}
 						span.title-wrap {
-						transform: translateY(0%);	
+						height: 100%;	
+							&:before {
+							top: -70px;	
+							}
+							span {
+								&:after, &:before {
+								top: -70px;	
+								}
+							}
 						}
 					}
 				}	
@@ -250,13 +312,11 @@ bottom: 0px;
 		}
 	}
 	&.nav-open {
-		.nav-item {
-		height: 5%;	
-		}
+
 		.nav-item-open {
-		height: 80%;
+		height: 400%;
 			.nav-grid {
-			height: 75%;	
+			height: 80%;	
 			border-top: @blk 1px solid;
 			}
 			&.green-grad {
@@ -275,7 +335,7 @@ bottom: 0px;
 			background: Gold;	
 			}
 			button {
-			height: 25%;
+			height: 20%;
 				span.state {
 					span {
 						&:nth-child(1) {
