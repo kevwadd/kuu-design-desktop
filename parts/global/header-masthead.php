@@ -8,7 +8,7 @@ $pg_color = get_field('pg_col', $post->ID);
 		<?php if (!is_front_page()) { ?>
 			<?php if ($post->post_parent != '0') { ?>
 			<?php echo get_the_title($post->post_parent); ?>
-			<?php } else if( is_home() ) { 
+			<?php } else if( is_home() || is_single() || is_archive()) { 
 			$blog_pg_id = get_option('page_for_posts');
 			//echo '<pre>';print_r($blog_pg_id);echo '</pre>';
 			?>
